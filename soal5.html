@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="index.html" style="position: absolute; right: 20px;">
+        <button type="Submit">balik</button>
+    </form>
+    <h3>Soal Fungsi</h3>
+    <button onclick="buatKalimat()">Siapa anda?</button>
+    <div id="hasil"></div>
+
+    <script>
+        function buatKalimat() {
+            var name = "John Doe";
+            var age ="30";
+            var addres="Jln. Malioboro, Yogyakarta";
+            var hobby ="gaming";
+            var tampil ="nama saya " + name + " umur saya " + age + " tahun, alamat saya di " + addres + ", dan saya punya hobby yaitu " + hobby;
+
+            document.getElementById("hasil").innerHTML = tampil;
+        }
+    </script>
+</body>
+</html>

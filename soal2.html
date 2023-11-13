@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="index.html" style="position: absolute; right: 20px;">
+        <button type="Submit">balik</button>
+    </form>
+    <h3>Soal Perulangan</h3>
+    <input type="number" id="ulang" min="1">
+    <button onclick="ulangKata()">Ulang</button>
+
+    <div id="hasil"></div>
+
+    <script>
+    function ulangKata() {
+      var jumlahUlang = document.getElementById("ulang").value;
+      var resultDiv = document.getElementById("hasil");
+
+      if (jumlahUlang > 0 && Number.isInteger(parseFloat(jumlahUlang))) {
+        var hasil = "";
+        for (var i = 0; i < jumlahUlang; i++) {
+          hasil += "Saya orang yang sabar, ramah, dan tidak membenci orang.<br>";
+        }
+        resultDiv.innerHTML = hasil;
+      } else {
+        resultDiv.innerHTML = "Masukkan jumlah ulang yang valid (bilangan bulat positif).";
+      }
+    }
+  </script>
+</body>
+</html>

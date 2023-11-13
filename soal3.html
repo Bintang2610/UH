@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="index.html" style="position: absolute; right: 20px;">
+        <button type="Submit">balik</button>
+    </form>
+    <h3>Soal Kondisional</h3>
+    <h2>Pilih Menu</h2>
+
+  <label for="menuSelect">Pilih Menu:</label>
+  <select id="menuSelect" onchange="tampilkanMenu()">
+    <option value="">-- Pilih Menu --</option>
+    <option value="makanan">Makanan</option>
+    <option value="minuman">Minuman</option>
+  </select>
+
+  <div id="output"></div>
+
+  <script>
+    function tampilkanMenu() {
+      var selectedMenu = document.getElementById("menuSelect").value;
+      var outputDiv = document.getElementById("output");
+
+      switch (selectedMenu) {
+        case 'makanan':
+          var daftarMakanan = ['Bakso', 'Mie Ayam', 'Soto', 'Kambing Guling', 'Ayam Bakar', 'Sate', 'Mie Goreng', 'Mendoan'];
+          outputDiv.innerHTML = '<h3>Daftar Makanan:</h3><ul>' + daftarMakanan.map(item => `<li>${item}</li>`).join('') + '</ul>';
+          break;
+        case 'minuman':
+          var daftarMinuman = ['Es Milo', 'Es Teh Manis', 'Es Jeruk', 'Es Campur', 'Es Kopi Susu', 'Es Teh Tawar', 'Es Dawet'];
+          outputDiv.innerHTML = '<h3>Daftar Minuman:</h3><ul>' + daftarMinuman.map(item => `<li>${item}</li>`).join('') + '</ul>';
+          break;
+        default:
+          outputDiv.innerHTML = '<p>Pilihan tidak valid. Silahkan pilih menu yang benar.</p>';
+      }
+    }
+  </script>
+</body>
+</html>
